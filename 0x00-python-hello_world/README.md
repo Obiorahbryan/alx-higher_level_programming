@@ -1,1 +1,2 @@
-Thi is a readme file
+#!/usr/bin/python3
+Python - Hello, World
