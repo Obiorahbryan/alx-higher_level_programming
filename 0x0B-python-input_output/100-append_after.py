@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-"""
-append module
-"""
+'''append_after'''
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """append method"""
+	'''search and update'''
+	read = []
+	with open(filename, "r", encoding="utf-8") as f:
+		read = f.readlines()
+		index = 0
 
-    stringme = ""
-    with open(filename, encoding="utf-8") as f:
-        for line in f:
-            stringme += line
-            if search_string in line:
-                stringme += new_string
-    with open(filename, mode="w") as f:
-        f.write(stringme)
+		while index < len(read):
+			if search_string in read[index]:
+				read[index:index + 1] = [read[index], new_string]
+				index += 1
+			index += 1
+
+	with open(filename, "w", encoding="utf-8") as file:
+		file.writelines(read)
