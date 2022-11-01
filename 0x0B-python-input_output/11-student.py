@@ -1,20 +1,14 @@
 #!/usr/bin/python3
-"""
-Class Module
-"""
+"""method for student creation"""
 
 
 class Student:
-    """Student class
-    """
+    """Student obj"""
 
     def __init__(self, first_name, last_name, age):
-        """initialize method"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """retrieves a dictionary representation of student instance
-        """
-        return vars(self)
+        return self.__dict__
